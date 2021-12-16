@@ -19,7 +19,6 @@ RUN python3 -m pip install \
     rm -rf /root/.cache
 
 RUN mkdir -p /opt/models
-COPY models /opt/models
 
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering
 #  our standard output stream, which means that logs can be delivered to the
