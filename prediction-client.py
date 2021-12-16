@@ -4,6 +4,7 @@ import tensorflow as tf
 import numpy as np
 import requests
 import json
+import sys
 
 
 fashion_mnist = tf.keras.datasets.fashion_mnist
@@ -21,7 +22,7 @@ data = {
 }
 
 predictions = requests.post(
-    'http://127.0.0.1:8501/v1/models/fashion-mnist:predict',
+    f'{sys.argv[1]}/v1/models/fashion-mnist:predict',
     json=data
 )
 predictions = json.loads(predictions.text)[0]
